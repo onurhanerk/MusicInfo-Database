@@ -1,6 +1,6 @@
 # MusicInfo-Database
 
-I wrote this project using Flask on Python, HtML and ORACLE also this project includes CSS and JS
+I wrote this project using Flask on Python, HtML and ORACLE also this project includes CSS and JS<br />
 To run the program, edit line 182 in server.py
 
 
