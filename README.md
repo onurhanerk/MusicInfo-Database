@@ -6,6 +6,8 @@ To run the program, edit line 182 in server.py<br /><br />
 
 ```Run server.py and then enter http: // localhost: 5000 /```
 
+![alt text](https://raw.githubusercontent.com/onurhanerk/MusicInfo-Database/master/Diagram1.png)
+
 1) Separate screens are designed for updating, deleting, adding and searching.
 2) When a user selects the group on a separate screen, the group's member information is automatically brought to the group's albums.
 3) It gives warning when different artists have songs with the same name. This was done using Trigger.
