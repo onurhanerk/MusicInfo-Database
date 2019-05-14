@@ -1,0 +1,103 @@
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAdd.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesSearch.css') }}">
+</head>
+<body>
+<div class="add-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <button>create</button>
+    </form>
+    <section class="hero">
+	<div>
+		<a href="searchArtist" class="btn-search" type="submit" form="form1" onclick="showDiv1()" > ARTIST</a>
+		<a href="searchGenre" type="submit" form="form2" class="btn-search"  onclick="showDiv2()">GENRES</a></br></br>
+		<a href="searchAlbum"  type="submit" form="form3" class="btn-search"  onclick="showDiv3()">ALBUMS</a>
+		<a href="searchTrack" type="submit" form="form2" class="btn-search"  onclick="showDiv2()">TRACKS</a></br></br>
+		</div>
+	</section>
+	
+	<div><form action="/searchArtist" method="POST" id="form1" name="deneme"></form></div>
+	<div><form action="/searchGenre" method="POST" id="form1" name="deneme"></form></div>
+	<div><form action="/searchAlbum" method="POST" id="form1" name="deneme"></form></div>
+	<div><form action="/searchTrack" method="POST" id="form1" name="deneme"></form></div>
+	
+	
+	
+
+	</div>
+	
+ </div>
+<script src= "http://code.jquery.com/jquery-1.9.0.js"> </script>
+<script src= "http://code.jquery.com/jquery-migrate-1.2.1.js"> </script>
+ <script type="text/javascript" language="JavaScript">
+$(document).ready(function(){
+    $('selectt').change(function(){
+        if($('selectt option:selected').text() == "ARTISTID"){
+        $('labelTrack').show();
+        }
+        else{
+        $('labelTrack').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ALBUMS"){
+        $('labelAlbum').show();
+        }
+        else{
+        $('labelAlbum').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ARTIST"){
+        $('labelArtist').show();
+        }
+        else{
+        $('labelArtist').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "GENRES"){
+        $('labelGenres').show();
+        }
+        else{
+        $('labelGenres').hide();
+        }
+    })
+});
+
+</script>
+
+<script>
+function showDiv1() {
+   document.getElementById('connectDiv1').style.display = "block";
+}
+function showDiv2() {
+   document.getElementById('connectDiv2').style.display = "block";
+}
+function showDiv3() {
+   document.getElementById('connectDiv3').style.display = "block";
+}
+function showDiv4() {
+   document.getElementById('connectDiv4').style.display = "block";
+}
+</script>
+
+
+</body>
+</html>

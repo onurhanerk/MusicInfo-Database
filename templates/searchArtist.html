@@ -1,0 +1,102 @@
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAdd.css') }}">
+	
+</head>
+<body>
+<div class="add-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <button>create</button>
+    </form>
+    <form class="add-form">
+	 <select></br>
+		<option>Select ROW</option></br>
+		<option value="ARTISTID">ARTISTID</option>
+		<option value="NAME">NAME</option>
+		<option value="YEAR">YEAR</option>
+	
+
+		
+
+	</select> 
+	</form>
+	
+	<labelArtist style="display:none;">
+      <form id="form4" method="POST" action="http://localhost:5000/searchRequest" name="form4">
+		<input type="number" name="arArtistID" placeholder="ARTISTID" >
+		<input type = "submit" value = "SEARCH" >
+		
+		</form>
+	 </labelArtist> 
+	
+	
+	
+	<labelYear style="display:none;">
+	<form id="form6" method="POST" action="http://localhost:5000/searchRequest" name="form6">
+      <input type="number" name="arYears" placeholder="YEAR">
+	  <input type = "submit" value = "SEARCH" >
+     </form>
+	</labelYear>
+	
+	<labelName style="display:none;">
+	<form id="form5" method="POST" action="http://localhost:5000/searchRequest" name="form5">
+      <input type="text" name="arName" placeholder="NAME">
+		<input type = "submit" value = "SEARCH" >
+		
+	</form>
+	</labelName>
+
+	</div>
+	
+ </div>
+<script src= "http://code.jquery.com/jquery-1.9.0.js"> </script>
+<script src= "http://code.jquery.com/jquery-migrate-1.2.1.js"> </script>
+ <script type="text/javascript" language="JavaScript">
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ARTISTID"){
+        $('labelArtist').show();
+        }
+        else{
+        $('labelArtist').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "YEAR"){
+        $('labelYear').show();
+        }
+        else{
+        $('labelYear').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "NAME"){
+        $('labelName').show();
+        }
+        else{
+        $('labelName').hide();
+        }
+    })
+});
+
+
+</script>
+
+<script>
+function showDiv1() {
+   document.getElementById('connectDiv1').style.display = "block";
+}
+</script>
+
+</body>
+</html>

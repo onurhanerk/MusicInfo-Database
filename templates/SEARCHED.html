@@ -1,0 +1,145 @@
+<section>
+  <!-- --> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleTables.css') }}">
+  
+  {% if artistText != "" %}
+  
+  <h1>ARTIST</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>ARTISTID</th>
+          <th>NAME</th>
+          <th>YEARS</th>
+          <th>OTHERINFO</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+	  	
+		{% for t in artistText %}
+        <tr>
+			{% for i in t %}
+				<td>{{i}}</td>
+			{% endfor %}		  
+        </tr>
+		{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+  
+  {% if genreText != "" %}
+    <h1>GENRES</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>GENREID</th>
+          <th>NAME</th>
+
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+	  
+       {% for t in genreText %}
+        <tr>
+			{% for i in t %}
+				<td>{{i}}</td>
+			{% endfor %}		  
+        </tr>
+		{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+  
+  {% if albumText != "" %}
+  <h1>ALBUMS</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>ALBUMID</th>
+          <th>NAME</th>
+          <th>RELEASEDATE</th>
+          <th>GENREID</th>
+		  <th>ARTISTID</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+	  
+       {% for t in albumText %}
+        <tr>
+			{% for i in t %}
+				<td>{{i}}</td>
+			{% endfor %}		  
+        </tr>
+		{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+
+	{% if trackText != "" %}
+    <h1>TRACKS</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>TRACKID</th>
+          <th>ALBUMID</th>
+          <th>NAME</th>
+          <th>PLAYTIME</th>
+		  <th>INSTRUMENTS</th>
+		  <th>GENREID</th>
+		  <th>TRACKID</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+	  
+       {% for t in trackText %}
+        <tr>
+			{% for i in t %}
+				<td>{{i}}</td>
+			{% endfor %}		  
+        </tr>
+		{% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+  
+  
+  
+  
+</section>
+
+
+
+<script src= "http://code.jquery.com/jquery-1.9.0.js"> </script>
+<script src= "http://code.jquery.com/jquery-migrate-1.2.1.js"> </script>
+<script type="text/javascript" language="JavaScript">
+// '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>

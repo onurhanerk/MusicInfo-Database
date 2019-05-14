@@ -1,0 +1,6 @@
+SELECT resource_name, limit
+FROM dba_profiles 
+WHERE profile = 'DEFAULT'
+AND resource_type = 'PASSWORD';
+
+ALTER USER ONURHAN ACCOUNT UNLOCK;

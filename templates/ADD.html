@@ -1,0 +1,129 @@
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAdd.css') }}">
+	
+</head>
+<body>
+<div class="add-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <button>create</button>
+    </form>
+    <form class="add-form">
+	 <select></br>
+		<option>Select Table</option></br>
+		<option value="artıst">ARTIST</option>
+		<option value="genres">GENRES</option>
+		<option value="albums">ALBUMS</option>
+		<option value="tracks">TRACKS</option> 
+		
+
+	</select> 
+	</form>
+	
+	<labelTrack style="display:none;">
+      <form id="form4" method="POST" action="http://localhost:5000/addedTrack" name="form4">
+		<input type="number" name="ttrackid" placeholder="TRACKID" >
+		<input type="number" name="tAlbumID" placeholder="ALBUMID" >
+		<input type="value" name="tName" placeholder="NAME">
+		<input type="value" name="tPlaytime" placeholder="PLAY TIME">
+		<input type="value" name="tInstr" placeholder="INSTRUMENTS">
+		<input type="number" name="tGenreID" placeholder="GENREID">
+		<input type="number" name="tArtistID" placeholder="ARTISTID">
+		<input type = "submit" value = "ADD" >
+		</form>
+	 </labelTrack> 
+	
+	
+	
+	<labelAlbum style="display:none;">
+	<form id="form6" method="POST" action="http://localhost:5000/addedAlbum" name="form6">
+      <input type="number" name="alAlbumID" placeholder="ALBUMID">
+      <input type="value"  name="alName" placeholder="NAME">
+	  <input type="number" name="alRelease" placeholder="RELEASEDATE">
+	  <input type="number" name="alGenreID" placeholder="GENREID">
+	  <input type="number" name="alArtıstID" placeholder="ARTISTID">
+	  <input type = "submit" value = "ADD" >
+     </form>
+	</labelAlbum>
+	
+	<labelArtist style="display:none;">
+	<form id="form5" method="POST" action="http://localhost:5000/addedArtist" name="form5">
+      <input type="number" name="arArtistID" placeholder="ARTISTID">
+      <input type="text" name="arName" placeholder="NAME">
+	  <input type="number" name="arYears" placeholder="YEARS">
+	  <input type="text" name="arOtherInfo" placeholder="OTHERINFO">
+		<input type = "submit" value = "ADD" >
+	</form>
+	</labelArtist>
+		
+	<labelGenres style="display:none;">
+	<form id="form7" method="POST" action="http://localhost:5000/addedGenre" name="form7">
+      <input type="number" name="GGenreID" placeholder="GENREID">
+      <input type="text" name="GName" placeholder="NAME">
+	  <input type = "submit" value = "ADD" >
+     </form>
+	</labelGenres>
+
+	</div>
+	
+ </div>
+<script src= "http://code.jquery.com/jquery-1.9.0.js"> </script>
+<script src= "http://code.jquery.com/jquery-migrate-1.2.1.js"> </script>
+ <script type="text/javascript" language="JavaScript">
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "TRACKS"){
+        $('labelTrack').show();
+        }
+        else{
+        $('labelTrack').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ALBUMS"){
+        $('labelAlbum').show();
+        }
+        else{
+        $('labelAlbum').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ARTIST"){
+        $('labelArtist').show();
+        }
+        else{
+        $('labelArtist').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "GENRES"){
+        $('labelGenres').show();
+        }
+        else{
+        $('labelGenres').hide();
+        }
+    })
+});
+
+</script>
+
+<script>
+function showDiv1() {
+   document.getElementById('connectDiv1').style.display = "block";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAdd.css') }}">
+	
+</head>
+<body>
+<div class="add-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <button>create</button>
+    </form>
+    <form class="add-form">
+	 <select></br>
+		<option>Select ROW</option></br>
+		<option value="alAlbumID">ALBUMID</option>
+		<option value="alName">NAME</option>
+		<option value="alRelease">RELEASEDATE</option>
+		<option value="alGenreID">GENREID</option>
+		<option value="alArtıstID">ARTISTID</option>
+
+		
+
+	</select> 
+	</form>
+	
+	<labelAlbumID style="display:none;">
+      <form id="form4" method="POST" action="http://localhost:5000/searchRequest" name="form4">
+		<input type="number" name="alAlbumID" placeholder="ALBUMID" >
+		<input type = "submit" value = "SEARCH" >
+		
+		</form>
+	 </labelAlbumID> 
+	
+	
+	
+	<labelName style="display:none;">
+	<form id="form6" method="POST" action="http://localhost:5000/searchRequest" name="form6">
+      <input type="text" name="alName" placeholder="NAME">
+	  <input type = "submit" value = "SEARCH" >
+     </form>
+	</labelName>
+	
+	<labelRelease style="display:none;">
+	<form id="form6" method="POST" action="http://localhost:5000/searchRequest" name="form6">
+      <input type="number" name="alRelease" placeholder="RELEASEDATE">
+	  <input type = "submit" value = "SEARCH" >
+     </form>
+	</labelRelease>
+	
+	
+	<labelGenreID style="display:none;">
+	<form id="form6" method="POST" action="http://localhost:5000/searchRequest" name="form6">
+      <input type="number" name="alGenreID" placeholder="GENREID">
+	  <input type = "submit" value = "SEARCH" >
+     </form>
+	</labelGenreID>
+	
+	<labelArtistID style="display:none;">
+	<form id="form6" method="POST" action="http://localhost:5000/searchRequest" name="form6">
+      <input type="number" name="alArtıstID" placeholder="ARTISTID">
+	  <input type = "submit" value = "SEARCH" >
+     </form>
+	</labelArtistID>
+	
+	</div>
+	
+ </div>
+<script src= "http://code.jquery.com/jquery-1.9.0.js"> </script>
+<script src= "http://code.jquery.com/jquery-migrate-1.2.1.js"> </script>
+ <script type="text/javascript" language="JavaScript">
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ALBUMID"){
+        $('labelAlbumID').show();
+        }
+        else{
+        $('labelAlbumID').hide();
+        }
+    })
+});
+
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "NAME"){
+        $('labelName').show();
+        }
+        else{
+        $('labelName').hide();
+        }
+    })
+});
+
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "RELEASEDATE"){
+        $('labelRelease').show();
+        }
+        else{
+        $('labelRelease').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "GENREID"){
+        $('labelGenreID').show();
+        }
+        else{
+        $('labelGenreID').hide();
+        }
+    })
+});
+
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ARTISTID"){
+        $('labelArtistID').show();
+        }
+        else{
+        $('labelArtistID').hide();
+        }
+    })
+});
+
+</script>
+
+<script>
+function showDiv1() {
+   document.getElementById('connectDiv1').style.display = "block";
+}
+</script>
+
+</body>
+</html>

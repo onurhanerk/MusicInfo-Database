@@ -1,0 +1,121 @@
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesAdd.css') }}">
+	
+</head>
+<body>
+<div class="add-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <button>create</button>
+    </form>
+
+	{% if idnumber=='ttrackid' %}
+      <form id="form5" method="POST" action="http://localhost:5000/updateDatas" name="form4">
+		<input type="number" name="ttrackid" placeholder="TRACKID" value="{{ list.0}}">
+		<input type="number" name="tAlbumID" placeholder="ALBUMID" value="{{ list.1}}" disabled>
+		<input type="value" name="tName" placeholder="NAME" value="{{ list.2}}">
+		<input type="value" name="tPlaytime" placeholder="PLAY TIME" value="{{ list.3}}">
+		<input type="value" name="tInstr" placeholder="INSTRUMENTS" value="{{ list.4}}">
+		<input type="number" name="tGenreID" placeholder="GENREID" value="{{ list.5}}" disabled>
+		<input type="number" name="tArtistID" placeholder="ARTISTID" value="{{ list.6}}" disabled>
+		<input type = "submit" value = "UPDATE" >
+	</form>
+	 {% endif %}
+	
+	
+	
+	{% if idnumber=='alAlbumID' %}
+	<form id="form6" method="POST" action="http://localhost:5000/updateDatas" name="form6">
+      <input type="number" name="alAlbumID" placeholder="ALBUMID" value="{{ list.0}}" disabled >
+      <input type="value"  name="alName" placeholder="NAME" value="{{ list.1}}" >
+	  <input type="number" name="alRelease" placeholder="RELEASEDATE" value="{{ list.2}}" >
+	  <input type="number" name="alGenreID" placeholder="GENREID" value="{{ list.3}}" disabled >
+	  <input type="number" name="alArtıstID" placeholder="ARTISTID" value="{{ list.4}}" disabled >
+	  <input type = "submit" value = "UPDATE" >
+     </form>
+	{% endif %}
+	
+	{% if idnumber=='arArtistID' %}
+	<form id="form5" method="POST" action="http://localhost:5000/updateDatas" name="form5">
+      <input type="number" name="arArtistID" placeholder="ARTISTID" value="{{ list.0}}" disabled>
+      <input type="text" name="arName" placeholder="NAME" value="{{ list.1 }}">
+	  <input type="number" name="arYears" placeholder="YEARS" value="{{ list.2 }}">
+	  <input type="text" name="arOtherInfo" placeholder="OTHERINFO" value="{{ list.3 }}">
+		<input type = "submit" value = "UPDATE" >
+	</form>
+	{% endif %}
+		
+	{% if idnumber=='GGenreID' %}
+	<form id="form7" method="POST" action="http://localhost:5000/updateDatas" name="form7">
+      <input type="number" name="GGenreID" placeholder="GENREID" value="{{ list.0}}" disabled >
+      <input type="text" name="GName" placeholder="NAME" value="{{ list.1}}" >
+	  <input type = "submit" value = "UPDATE" >
+     </form>
+	  
+	{% endif %}
+
+	
+
+	</div>
+	
+ </div>
+<script src= "http://code.jquery.com/jquery-1.9.0.js"> </script>
+<script src= "http://code.jquery.com/jquery-migrate-1.2.1.js"> </script>
+ <script type="text/javascript" language="JavaScript">
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "TRACKS"){
+        $('labelTrack').show();
+        }
+        else{
+        $('labelTrack').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ALBUMS"){
+        $('labelAlbum').show();
+        }
+        else{
+        $('labelAlbum').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "ARTIST"){
+        $('labelArtist').show();
+        }
+        else{
+        $('labelArtist').hide();
+        }
+    })
+});
+$(document).ready(function(){
+    $('select').change(function(){
+        if($('select option:selected').text() == "GENRES"){
+        $('labelGenres').show();
+        }
+        else{
+        $('labelGenres').hide();
+        }
+    })
+});
+
+</script>
+
+<script>
+function showDiv1() {
+   document.getElementById('connectDiv1').style.display = "block";
+}
+</script>
+
+</body>
+</html>
