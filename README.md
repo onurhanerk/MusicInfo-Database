@@ -15,8 +15,8 @@ To run the program, edit line 182 in server.py<br /><br />
    - If the difference between the duration of the songs is between 0-10 sec, it is 5 points, between 11-65 sec.
    - The number of the same instruments used in the two songs is added to the total likelihood score.
 
-![alt text](https://i.ibb.co/ZBLDStd/1.png)
-![alt text](https://i.ibb.co/Mcv8dpS/2.png)
+![alt text](https://i.ibb.co/DzcLSDS/1.png)
+![alt text](https://i.ibb.co/vZ1dnGT/2.png)
 ![alt text](https://i.ibb.co/Cz6h2sj/3.png)
 ![alt text](https://i.ibb.co/xH8tsLk/4.png)
 ![alt text](https://i.ibb.co/qDxw0xT/5.png)
