@@ -1,1 +1,2 @@
-src//HTML/* linguist-vendored
+templates/HTML/* linguist-vendored
+*.html linguist-vendored=false
