@@ -5,4 +5,4 @@ To run the program, edit line 182 in server.py
 
 
 
-<img src="https://ibb.co/HtF8C17" alt="INDEX"/>
+<img alt="https://ibb.co/HtF8C17"/>
